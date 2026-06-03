@@ -14,7 +14,7 @@
 
 
   # Modos de los modulos
-  antigravity-non-nixos.mode = "wrapped";
+  #antigravity-non-nixos.mode = "wrapped";
   
   # Activar modulos
 
