@@ -39,17 +39,23 @@ in
           
           # Ajustamos el acceso directo para que use nuestro binario envuelto e iconos con ruta absoluta
           for f in $out/share/applications/*.desktop; do
+            # Reemplazar Exec con la ruta de nuestro binario envuelto
             substituteInPlace "$f" \
-              --replace "${pkgs.antigravity}/bin/antigravity" "$out/bin/antigravity" \
-              --replace "Exec=antigravity" "Exec=$out/bin/antigravity"
+              --replace-quiet "${pkgs.antigravity}/bin/antigravity" "$out/bin/antigravity" \
+              --replace-quiet "Exec=antigravity" "Exec=$out/bin/antigravity"
             
-            icon_name=$(grep -E "^Icon=" "$f" | cut -d= -f2)
-            if [ -n "$icon_name" ]; then
-              icon_file=$(find $out/share/ Glastonbury -name "$icon_name.*" | head -n 1)
-              if [ -n "$icon_file" ]; then
-                substituteInPlace "$f" --replace "Icon=$icon_name" "Icon=$icon_file"
+            # Buscar cada nombre de icono en el archivo .desktop y reemplazarlo por su ruta absoluta
+            grep -E "^Icon=" "$f" | cut -d= -f2 | while read -r icon_name; do
+              # Eliminar retornos de carro si los hubiera
+              icon_name=$(echo "$icon_name" | tr -d '\r')
+              if [ -n "$icon_name" ]; then
+                # Buscar la ruta absoluta del archivo de icono en $out/share
+                icon_file=$(find $out/share/ -name "$icon_name.*" | head -n 1)
+                if [ -n "$icon_file" ]; then
+                  substituteInPlace "$f" --replace-quiet "Icon=$icon_name" "Icon=$icon_file"
+                fi
               fi
-            fi
+            done
           done
         '')
       ];
