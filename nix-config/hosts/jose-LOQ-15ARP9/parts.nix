@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../default.nix
     ../../modules/core-utils/core-utils.nix
     ../../modules/core-utils/desktop/spotify.nix
     ../../modules/gaming/gaming.nix
