@@ -2,7 +2,7 @@
 
 let
   # Retrieve themes and extensions directly from the flake inputs
-  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.hostPlatform.system};
 in
 {
   imports = [
