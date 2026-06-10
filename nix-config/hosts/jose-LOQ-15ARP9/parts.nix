@@ -9,14 +9,13 @@
     ../../modules/programming/programming.nix
   ];
 
-
-
-
   # Modos de los modulos
   #antigravity-non-nixos.mode = "wrapped";
+  gaming.steam.mode = "wrapped";
   
   # Activar modulos
 
   # Opciones base
   targets.genericLinux.enable = true;
 }
+

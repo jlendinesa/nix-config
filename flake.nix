@@ -16,17 +16,24 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # nixGL input
+    nixgl = {
+      url = "github:nix-community/nixGL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, home-manager, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixgl, ... }@inputs:
     let
       system = "x86_64-linux";
       
-      # Modificamos esto para forzar que pkgs acepte software privativo
+      # Modificamos esto para forzar que pkgs acepte software privativo, la licencia de NVIDIA y nixGL
       pkgs = import nixpkgs {
         inherit system;
         config = {
           allowUnfree = true;
+          nvidia.acceptLicense = true;
         };
       };
     in {
