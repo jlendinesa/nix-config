@@ -19,10 +19,10 @@
     # Alias de bat
     bat = "batcat";
 
-    # Alias de home-manager switch con flake
-    hms = "home-manager switch --flake ~/.config/home-manager";
+    # Alias de home-manager switch con flake (con backup automático de archivos conflictivos)
+    hms = "home-manager switch -b backup --flake ~/.config/home-manager";
 
     # Alias para actualizar el flake.lock y aplicar los cambios
-    hmsupdate = "nix flake update --flake ~/.config/home-manager && home-manager switch --flake ~/.config/home-manager";
+    hmsupdate = "nix flake update --flake ~/.config/home-manager && home-manager switch -b backup --flake ~/.config/home-manager";
   };
 }

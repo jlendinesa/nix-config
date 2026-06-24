@@ -37,13 +37,22 @@
   };
 
   # Configurar Wezterm como el terminal predeterminado (usado por xdg-terminal-exec)
-  xdg.configFile."xdg-terminals.list".text = ''
-    org.wezfurlong.wezterm.desktop
-  '';
-  xdg.configFile."zorin-xdg-terminals.list".text = ''
-    org.wezfurlong.wezterm.desktop
-  '';
-  xdg.configFile."GNOME-xdg-terminals.list".text = ''
-    org.wezfurlong.wezterm.desktop
-  '';
+  xdg.configFile."xdg-terminals.list" = {
+    text = ''
+      org.wezfurlong.wezterm.desktop
+    '';
+    force = true;
+  };
+  xdg.configFile."zorin-xdg-terminals.list" = {
+    text = ''
+      org.wezfurlong.wezterm.desktop
+    '';
+    force = true;
+  };
+  xdg.configFile."GNOME-xdg-terminals.list" = {
+    text = ''
+      org.wezfurlong.wezterm.desktop
+    '';
+    force = true;
+  };
 }
