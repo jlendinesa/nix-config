@@ -71,9 +71,9 @@ in
 
           nixgl = import inputs.nixgl {
             pkgs = final;
-            enable32bits = final.system == "x86_64-linux";
-            nvidiaVersion = "595.71.05";
-            nvidiaHash = "sha256-NiA7iWC35JyKQva6H1hjzeNKBek9KyS3mK8G3YRva4I=";
+            enable32bits = final.stdenv.hostPlatform.system == "x86_64-linux";
+            nvidiaVersion = "535.309.01";
+            nvidiaHash = "sha256-KItJAup5sBe0mpImqE9+qj5rScoBRq5QJ3wv4Z3TmAM=";
           };
         })
       ];
