@@ -3,9 +3,30 @@
 let
   cfg = config.gaming.steam;
 
-  # Wrap Steam and Steam-run using nixGL for hardware-accelerated rendering on non-NixOS
-  steam-wrapped = pkgs.symlinkJoin {
-    name = "steam-wrapped";
+  # Wrapper simplificado para gráficas AMD/Intel usando Mesa
+  steam-wrapped-mesa = pkgs.symlinkJoin {
+    name = "steam-wrapped-mesa";
+    paths = [ pkgs.steam ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/steam \
+        --run "exec ${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.steam}/bin/steam \"\$@\""
+    '';
+  };
+
+  steam-run-wrapped-mesa = pkgs.symlinkJoin {
+    name = "steam-run-wrapped-mesa";
+    paths = [ pkgs.steam-run ];
+    nativeBuildInputs = [ pkgs.makeWrapper ];
+    postBuild = ''
+      wrapProgram $out/bin/steam-run \
+        --run "exec ${pkgs.nixgl.nixGLIntel}/bin/nixGLIntel ${pkgs.steam-run}/bin/steam-run \"\$@\""
+    '';
+  };
+
+  # Wrapper para NVIDIA
+  steam-wrapped-nvidia = pkgs.symlinkJoin {
+    name = "steam-wrapped-nvidia";
     paths = [ pkgs.steam ];
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
@@ -17,8 +38,8 @@ let
     '';
   };
 
-  steam-run-wrapped = pkgs.symlinkJoin {
-    name = "steam-run-wrapped";
+  steam-run-wrapped-nvidia = pkgs.symlinkJoin {
+    name = "steam-run-wrapped-nvidia";
     paths = [ pkgs.steam-run ];
     nativeBuildInputs = [ pkgs.makeWrapper ];
     postBuild = ''
@@ -33,11 +54,12 @@ in
 {
   options = {
     gaming.steam.mode = lib.mkOption {
-      type = lib.types.enum [ "wrapped" "native" "disabled" ];
+      type = lib.types.enum [ "wrapped-mesa" "wrapped-nvidia" "native" "disabled" ];
       default = "disabled";
       description = ''
         Modo de instalación para Steam:
-          - "wrapped": Versión envuelta con nixGL para aceleración por hardware híbrida NVIDIA en entornos non-NixOS.
+          - "wrapped-mesa": Versión envuelta con nixGL para aceleración por hardware (AMD/Intel) en entornos non-NixOS.
+          - "wrapped-nvidia": Versión envuelta con nixGL para aceleración por hardware híbrida NVIDIA en entornos non-NixOS.
           - "native": Instalación normal directa de Steam (ideal para NixOS o cuando no se requiera nixGL).
           - "disabled": No instalar Steam.
       '';
@@ -45,8 +67,26 @@ in
   };
 
   config = lib.mkMerge [
-    # Caso 'wrapped' (nixGL)
-    (lib.mkIf (cfg.mode == "wrapped") {
+    # Caso 'wrapped-mesa' (nixGL para AMD/Intel)
+    (lib.mkIf (cfg.mode == "wrapped-mesa") {
+      nixpkgs.overlays = [
+        (final: prev: {
+          nixgl = import inputs.nixgl {
+            pkgs = final;
+            enable32bits = final.stdenv.hostPlatform.system == "x86_64-linux";
+          };
+        })
+      ];
+
+      home.packages = [
+        steam-wrapped-mesa
+        steam-run-wrapped-mesa
+      ];
+      home.file.".local/share/Steam/compatibilitytools.d/proton-ge-bin".source = pkgs.proton-ge-bin.steamcompattool;
+    })
+
+    # Caso 'wrapped-nvidia' (nixGL para NVIDIA)
+    (lib.mkIf (cfg.mode == "wrapped-nvidia") {
       nixpkgs.overlays = [
         (final: prev: {
           # Intercept nvidia_x11 override to strip the 'kernel' argument which was removed in recent nixpkgs
@@ -79,8 +119,8 @@ in
       ];
 
       home.packages = [
-        steam-wrapped
-        steam-run-wrapped
+        steam-wrapped-nvidia
+        steam-run-wrapped-nvidia
       ];
       home.file.".local/share/Steam/compatibilitytools.d/proton-ge-bin".source = pkgs.proton-ge-bin.steamcompattool;
     })

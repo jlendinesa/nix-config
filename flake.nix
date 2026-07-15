@@ -27,7 +27,7 @@
   outputs = { nixpkgs, home-manager, nixgl, ... }@inputs:
     let
       system = "x86_64-linux";
-      
+
       # Modificamos esto para forzar que pkgs acepte software privativo, la licencia de NVIDIA y nixGL
       pkgs = import nixpkgs {
         inherit system;
@@ -52,6 +52,14 @@
           modules = [
             ./home.nix
             ./nix-config/hosts/jose-Aspire-E1-571/parts.nix
+          ];
+          extraSpecialArgs = { inherit inputs; };
+        };
+        "jose@cachyos-x8664" = home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          modules = [
+            ./home.nix
+            (./. + "/nix-config/hosts/jose@cachyos-x8664/parts.nix")
           ];
           extraSpecialArgs = { inherit inputs; };
         };

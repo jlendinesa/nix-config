@@ -13,9 +13,8 @@
   #antigravity-non-nixos.mode = "wrapped";
   
   # Activar modulos
-  gaming.steam.mode = "wrapped-nvidia";
+  gaming.steam.mode = "wrapped-mesa";
 
   # Opciones base
   targets.genericLinux.enable = true;
 }
-

@@ -18,6 +18,6 @@ set -x PATH $HOME/.npm-global/bin $PATH
 if test -f ~/.config/fish/secrets.fish
     source ~/.config/fish/secrets.fish
 end
-
+set -gx XDG_DATA_DIRS "$HOME/.nix-profile/share" $XDG_DATA_DIRS
 # opencode
 fish_add_path /home/jose/.opencode/bin
