@@ -18,11 +18,20 @@
 
     # Alias de bat
     bat = "batcat";
-
-    # Alias de home-manager switch con flake (con backup automático de archivos conflictivos)
-    hms = "home-manager switch -b backup --flake ~/.config/home-manager";
-
-    # Alias para actualizar el flake.lock y aplicar los cambios
-    hmsupdate = "nix flake update --flake ~/.config/home-manager && home-manager switch -b backup --flake ~/.config/home-manager";
   };
+
+  # Scripts para comandos más complejos que fallan como aliases en algunas shells (ej. fish)
+  home.packages = [
+    (pkgs.writeShellScriptBin "hms" ''
+      home-manager switch -b backup --flake ~/.config/home-manager "$@" && {
+        kbuildsycoca6 2>/dev/null || update-desktop-database ~/.nix-profile/share/applications 2>/dev/null || true
+      }
+    '')
+    (pkgs.writeShellScriptBin "hmsupdate" ''
+      nix flake update --flake ~/.config/home-manager "$@" &&
+      home-manager switch -b backup --flake ~/.config/home-manager "$@" && {
+        kbuildsycoca6 2>/dev/null || update-desktop-database ~/.nix-profile/share/applications 2>/dev/null || true
+      }
+    '')
+  ];
 }
