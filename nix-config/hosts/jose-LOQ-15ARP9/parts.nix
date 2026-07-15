@@ -4,6 +4,7 @@
   imports = [
     ../../modules/core-utils/core-utils.nix
     ../../modules/core-utils/desktop/spotify.nix
+    ../../modules/comunication/comunication.nix
     ../../modules/gaming/gaming.nix
     ../../modules/office/office.nix
     ../../modules/programming/programming.nix
