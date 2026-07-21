@@ -55,11 +55,11 @@
           ];
           extraSpecialArgs = { inherit inputs; };
         };
-        "jose@cachyos-x8664" = home-manager.lib.homeManagerConfiguration {
+        "jose@jose-B450M-DS3H" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             ./home.nix
-            (./. + "/nix-config/hosts/jose@cachyos-x8664/parts.nix")
+            ./nix-config/hosts/jose-B450M-DS3H/parts.nix
           ];
           extraSpecialArgs = { inherit inputs; };
         };
