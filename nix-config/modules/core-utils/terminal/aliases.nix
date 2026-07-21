@@ -19,7 +19,7 @@
 
     # Alias de bat
     bat = "batcat";
-    hmsupdate = "hmsu";
+    hmsu = "hmsupdate";
   };
 
   # Scripts para comandos más complejos que fallan como aliases en algunas shells (ej. fish)
