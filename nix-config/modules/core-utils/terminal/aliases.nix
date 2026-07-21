@@ -10,6 +10,7 @@
     ll = "ls -alF";
     la = "ls -A";
     l = "ls -CF";
+    cls = "clear";
 
     # Aliases de grep
     grep = "grep --color=auto";
@@ -18,6 +19,7 @@
 
     # Alias de bat
     bat = "batcat";
+    hmsupdate = "hmsu";
   };
 
   # Scripts para comandos más complejos que fallan como aliases en algunas shells (ej. fish)
