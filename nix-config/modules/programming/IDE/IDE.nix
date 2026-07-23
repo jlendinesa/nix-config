@@ -10,5 +10,6 @@
     jetbrains.pycharm-oss
     neovim
     antigravity
+    zeditor
   ];
 }

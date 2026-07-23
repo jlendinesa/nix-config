@@ -10,5 +10,24 @@
     # Agrega tus programas de escritorio aquí (por ejemplo: firefox, discord, etc.)
     motrix
     brave
+    localsend
+    ente-auth
+    ryubing
+    heroic
+    lutris
+    bottles
+    steam-rom-manager
+    upscayl
+    pinta
+    fragments
+    tailscale
+    virtualbox
+    retroarch
+    megasync
+    cemu
+    pcsx2
+    shadps4
+    sgdboop
+    docker
   ];
 }
