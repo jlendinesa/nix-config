@@ -15,7 +15,6 @@
     ryubing
     heroic
     lutris
-    bottles
     steam-rom-manager
     upscayl
     pinta

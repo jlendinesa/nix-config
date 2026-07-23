@@ -8,7 +8,7 @@
   programs.fish = {
     enable = true;
 
-    # Fish plugins migrated to Nix/Home Manager
+    # Fish plugins super completos integrados en Nix/Home Manager
     plugins = [
       {
         name = "bobthefish";
@@ -29,6 +29,71 @@
       {
         name = "nvm";
         src = pkgs.fishPlugins.nvm.src;
+      }
+      {
+        # Notificaciones de escritorio cuando terminan comandos largos
+        name = "done";
+        src = pkgs.fishPlugins.done.src;
+      }
+      {
+        # Cierre automático de comillas y paréntesis tipo IDE
+        name = "autopair";
+        src = pkgs.fishPlugins.autopair-fish.src;
+      }
+      {
+        # Expansión rápida de rutas ("..." -> "../../", etc.)
+        name = "puffer";
+        src = pkgs.fishPlugins.puffer.src;
+      }
+      {
+        # Páginas de ayuda "man" en colores
+        name = "colored-man-pages";
+        src = pkgs.fishPlugins.colored-man-pages.src;
+      }
+      {
+        # Interfaz interactiva para Git con fzf (glog, gdf, ga, gcb)
+        name = "forgit";
+        src = pkgs.fishPlugins.forgit.src;
+      }
+      {
+        # Limpieza de historial: evita guardar comandos con errores tipográficos o fallidos
+        name = "sponge";
+        src = pkgs.fishPlugins.sponge.src;
+      }
+      {
+        # Recordatorio inteligente cuando escribes un comando largo teniendo un alias definido
+        name = "fish-you-should-use";
+        src = pkgs.fishPlugins.fish-you-should-use.src;
+      }
+      {
+        # Añade sudo rápidamente al comando actual con un atajo (Esc dos veces)
+        name = "plugin-sudope";
+        src = pkgs.fishPlugins.plugin-sudope.src;
+      }
+      {
+        # Coloreado genérico mejorado para la salida de terminal
+        name = "grc";
+        src = pkgs.fishPlugins.grc.src;
+      }
+      {
+        # Autocompletado flotante interactivo e inteligente con fzf
+        name = "fifc";
+        src = pkgs.fishPlugins.fifc.src;
+      }
+      {
+        # Salto rápido a cualquier directorio padre ("bd <nombre>")
+        name = "fish-bd";
+        src = pkgs.fishPlugins.fish-bd.src;
+      }
+      {
+        # Muestra la duración de ejecución de comandos en formato humano (ej. 2m 15s)
+        name = "humantime-fish";
+        src = pkgs.fishPlugins.humantime-fish.src;
+      }
+      {
+        # Abreviaturas automáticas para comandos Git
+        name = "git-abbr";
+        src = pkgs.fishPlugins.git-abbr.src;
       }
     ];
 
@@ -61,15 +126,22 @@
 
     # Interactive shell initialization (migrated from config.fish)
     interactiveShellInit = ''
-      # Variables de entorno y PATH
-      fish_add_path /home/jose/.spicetify
-      fish_add_path /usr/lib/jvm/jdk-21.0.7+6/bin
+      # Desactivar el saludo por defecto de Fish
+      set -g fish_greeting ""
 
-      set -Ux JAVA_HOME /usr/lib/jvm/jdk-21.0.7+6
+      # Variables de entorno y PATH portables para cualquier sistema
+      if test -d $HOME/.spicetify
+          fish_add_path $HOME/.spicetify
+      end
+
+      if test -d /usr/lib/jvm/jdk-21.0.7+6/bin
+          fish_add_path /usr/lib/jvm/jdk-21.0.7+6/bin
+          set -Ux JAVA_HOME /usr/lib/jvm/jdk-21.0.7+6
+      end
 
       # FNM (Fast Node Manager)
-      set FNM_PATH "/home/jose/.local/share/fnm"
-      if [ -d "$FNM_PATH" ]
+      set FNM_PATH "$HOME/.local/share/fnm"
+      if test -d "$FNM_PATH"
           set PATH "$FNM_PATH" $PATH
           if status --is-interactive
               fnm env --shell fish | source
@@ -77,8 +149,10 @@
       end
 
       # Evitar duplicados en el PATH agregando una vez
-      if not contains $HOME/.npm-global/bin $PATH
-          set -x PATH $HOME/.npm-global/bin $PATH
+      if test -d $HOME/.npm-global/bin
+          if not contains $HOME/.npm-global/bin $PATH
+              set -x PATH $HOME/.npm-global/bin $PATH
+          end
       end
 
       # SpotDL credentials (loaded from local file to avoid exposing secrets on GitHub)
@@ -87,8 +161,41 @@
       end
 
       # opencode
-      fish_add_path /home/jose/.opencode/bin
+      if test -d $HOME/.opencode/bin
+          fish_add_path $HOME/.opencode/bin
+      end
     '';
+  };
+
+  # Integraciones modernas de terminal en formato Home Manager
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableFishIntegration = true;
+  };
+
+  programs.eza = {
+    enable = true;
+    enableFishIntegration = true;
+    icons = "auto";
+    git = true;
+  };
+
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "TwoDark";
+    };
+  };
+
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
   };
 }
 

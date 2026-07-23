@@ -5,11 +5,11 @@
   home.shellAliases = {
     ff = "fastfetch";
 
-    # Aliases de ls
-    ls = "ls --color=auto";
-    ll = "ls -alF";
-    la = "ls -A";
-    l = "ls -CF";
+    # Aliases de eza / ls
+    ls = "eza --icons";
+    ll = "eza -lh --icons --git";
+    la = "eza -la --icons --git";
+    l = "eza -CF --icons";
     cls = "clear";
 
     # Aliases de grep
@@ -17,8 +17,6 @@
     fgrep = "fgrep --color=auto";
     egrep = "egrep --color=auto";
 
-    # Alias de bat
-    bat = "batcat";
     hmsu = "hmsupdate";
   };
 

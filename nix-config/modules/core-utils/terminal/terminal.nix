@@ -12,6 +12,8 @@
     fish
     tree
     distrobox
+    fzf
+    grc
 
 
 
