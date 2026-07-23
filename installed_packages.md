@@ -50,7 +50,6 @@
 | net.nokyan.Resources | Resources | 1.10.2 | stable |
 | net.pcsx2.PCSX2 | PCSX2 | v2.6.3 | stable |
 | net.shadps4.shadPS4 | shadPS4 | 0.16.0 | stable |
-| org.apache.netbeans | NetBeans | 30 | stable |
 | org.blender.Blender | Blender | 5.2 | stable |
 | org.blender.Blender.Codecs | Codecs |  | stable |
 | org.fedoraproject.MediaWriter | Fedora Media Writer | 5.3.2 | stable |
@@ -76,39 +75,13 @@
 | org.freedesktop.Sdk | Freedesktop SDK | freedesktop-sdk-24.08.34 | 24.08 |
 | org.freedesktop.Sdk | Freedesktop SDK | freedesktop-sdk-25.08.14 | 25.08 |
 | org.freedesktop.Sdk | Freedesktop SDK | freedesktop-sdk-25.08.14 | 25.08 |
-| org.gimp.GIMP | Programa de manipulación de imágenes de GNU | 3.2.4 | stable |
 | org.gnome.Papers | Visor de documentos | 50.2 | stable |
-| org.gnome.Platform | GNOME Application Platform version 49 |  | 49 |
-| org.gnome.Platform | GNOME Application Platform version 50 |  | 50 |
 | org.gnome.Solanum | Solanum | 6.0.0 | stable |
 | org.gnome.Solanum | Solanum | 6.0.0 | stable |
 | org.gnome.gThumb | Visor de imágenes gThumb | 3.12.10 | stable |
-| org.gtk.Gtk3theme.ZorinBlue-Dark | ZorinBlue-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinBlue-Light | ZorinBlue-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinBrown-Dark | ZorinBrown-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinBrown-Light | ZorinBrown-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinGreen-Dark | ZorinGreen-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinGreen-Light | ZorinGreen-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinGrey-Dark | ZorinGrey-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinGrey-Light | ZorinGrey-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinOrange-Dark | ZorinOrange-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinOrange-Light | ZorinOrange-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinPurple-Dark | ZorinPurple-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinPurple-Light | ZorinPurple-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinRed-Dark | ZorinRed-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinRed-Light | ZorinRed-Light |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinYellow-Dark | ZorinYellow-Dark |  | 3.22 |
-| org.gtk.Gtk3theme.ZorinYellow-Light | ZorinYellow-Light |  | 3.22 |
-| org.kde.KStyle.Adwaita | Adwaita theme |  | 6.10 |
-| org.kde.KStyle.Adwaita | Adwaita theme |  | 6.9 |
-| org.kde.Platform | KDE Application Platform |  | 6.10 |
-| org.kde.Platform | KDE Application Platform |  | 6.11 |
-| org.kde.Platform | KDE Application Platform |  | 6.9 |
 | org.localsend.localsend_app | LocalSend | 1.17.0 | stable |
 | org.upscayl.Upscayl | Upscayl | 2.15.0 | stable |
 | org.vinegarhq.Sober | Sober | 1.7.1 | stable |
-| org.winehq.Wine.gecko | gecko |  | stable-25.08 |
-| org.winehq.Wine.mono | mono |  | stable-25.08 |
 | xyz.xclicker.xclicker | XClicker | 45dbe5b | stable |
 
 ## Deb Packages
