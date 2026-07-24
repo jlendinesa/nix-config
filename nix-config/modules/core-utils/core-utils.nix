@@ -4,6 +4,7 @@
   imports = [
     ./desktop/desktop.nix
     ./terminal/terminal.nix
+    ./flatpak/flatpak.nix
   ];
 
   # Plantilla para paquetes de programas del módulo core-utils

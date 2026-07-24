@@ -14,14 +14,6 @@ Google Chrome (google-chrome-stable)
 bottles
 
 
-  
-  
-  
-  
-  
-  
-  
-
 Herramientas de Desarrollo (Mejor en nix-shell / direnv)
 
 En NixOS, es recomendable no instalar estos paquetes a nivel de sistema, sino llamarlos declarativamente por proyecto cuando programes:
@@ -33,12 +25,10 @@ Python/Ruby/Perl: Tenías instalados cientos de módulos (ej. python3-pip, ruby-
   
   
   
-
+warehouse
 Network/Monitoring Tools: nmap (si lo usas, aunque vi tcpdump), wireshark (no listado pero recomendado), inxi, lsof, jq, bat, fzf, stacer.
 
 Gaming y Emulación
 
-Moonlight (com.moonlight_stream.Moonlight)
-itch (io.itch.itch)
 GameMode (gamemode) - Optimización de rendimiento.
 MangoHud (mangohud) - Para monitorizar los FPS y las temperaturas.

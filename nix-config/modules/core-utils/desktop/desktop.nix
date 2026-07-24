@@ -28,5 +28,6 @@
     shadps4
     sgdboop
     docker
+    itch
   ];
 }
