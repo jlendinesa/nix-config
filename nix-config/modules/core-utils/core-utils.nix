@@ -5,6 +5,7 @@
     ./desktop/desktop.nix
     ./terminal/terminal.nix
     ./flatpak/flatpak.nix
+    ./appimages/appimages.nix
   ];
 
   # Plantilla para paquetes de programas del módulo core-utils

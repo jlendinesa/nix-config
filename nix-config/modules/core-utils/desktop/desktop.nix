@@ -3,6 +3,7 @@
 {
   imports = [
     ./keyd.nix
+    ./remote.nix
   ];
 
   # Plantilla para paquetes de programas del módulo desktop

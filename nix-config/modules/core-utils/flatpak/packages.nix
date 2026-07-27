@@ -3,4 +3,6 @@
   "io.github.flattool.Warehouse"
   "com.github.tchx84.Flatseal"
   "com.google.Chrome"
+  "it.mijorus.gearlever"
+  "com.usebottles.bottles"
 ]

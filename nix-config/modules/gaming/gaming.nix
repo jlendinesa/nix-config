@@ -5,7 +5,8 @@
     ./steam.nix
   ];
 
-  # Plantilla para paquetes de programas del módulo gaming
+  # Paquetes de programas del módulo gaming
   home.packages = with pkgs; [
+    protontricks
   ];
 }
