@@ -20,7 +20,6 @@
     upscayl
     pinta
     fragments
-    tailscale
     virtualbox
     retroarch
     megasync
@@ -30,5 +29,6 @@
     sgdboop
     docker
     itch
+    opencode
   ];
 }

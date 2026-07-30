@@ -5,4 +5,5 @@
   "com.google.Chrome"
   "it.mijorus.gearlever"
   "com.usebottles.bottles"
+  "org.vinegarhq.Sober"
 ]
