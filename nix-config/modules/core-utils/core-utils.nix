@@ -12,5 +12,10 @@
   # Plantilla para paquetes de programas del módulo core-utils
   home.packages = with pkgs; [
     # Agrega tus programas generales de core-utils aquí
+    motrix
+    ente-auth
+    fragments
+    virtualbox
+    megasync
   ];
 }

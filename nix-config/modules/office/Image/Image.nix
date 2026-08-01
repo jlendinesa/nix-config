@@ -3,6 +3,8 @@
 {
   # Plantilla para paquetes de programas del módulo Image
   home.packages = with pkgs; [
+    upscayl
+    pinta
     (pkgs.runCommand "krita-wrapped" {
       nativeBuildInputs = [ makeWrapper ];
     } ''

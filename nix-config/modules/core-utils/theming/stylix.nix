@@ -11,7 +11,7 @@
   stylix.targets.wezterm.enable = true;
 
   # Wallpaper (Stylix needs an image even if we provide a scheme)
-  stylix.image = ../../../../Sif.png;
+  stylix.image = ../../../../wallpapers/gruvbox-light/Sif.png;
 
   # Force Gruvbox Light theme
   stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-light-medium.yaml";
