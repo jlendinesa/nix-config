@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-    vencord
+    vesktop
     zapzap
     brave
     localsend
