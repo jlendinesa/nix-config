@@ -6,4 +6,5 @@
   "it.mijorus.gearlever"
   "com.usebottles.bottles"
   "org.vinegarhq.Sober"
+  "org.raspberrypi.rpi-imager"
 ]
