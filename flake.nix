@@ -22,9 +22,12 @@
       url = "github:nix-community/nixGL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Stylix (only for WezTerm)
+    stylix.url = "github:danth/stylix";
   };
 
-  outputs = { nixpkgs, home-manager, nixgl, ... }@inputs:
+  outputs = { nixpkgs, home-manager, nixgl, stylix, ... }@inputs:
     let
       system = "x86_64-linux";
 
@@ -41,6 +44,7 @@
         "jose@jose-LOQ-15ARP9" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            stylix.homeModules.stylix
             ./home.nix
             ./nix-config/hosts/jose-LOQ-15ARP9/parts.nix
           ];
@@ -50,6 +54,7 @@
         "jose@jose-Aspire-E1-571" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            stylix.homeModules.stylix
             ./home.nix
             ./nix-config/hosts/jose-Aspire-E1-571/parts.nix
           ];
@@ -58,6 +63,7 @@
         "jose@jose-B450M-DS3H" = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
+            stylix.homeModules.stylix
             ./home.nix
             ./nix-config/hosts/jose-B450M-DS3H/parts.nix
           ];

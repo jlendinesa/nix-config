@@ -28,7 +28,7 @@
         font_size = 11.5,
 
         -- Colors and appearance
-        color_scheme = "Catppuccin Mocha", -- You can change this to any built-in theme
+        color_scheme = "stylix",
         enable_wayland = false, -- Zorin is X11 by default
 
         -- Transparency
@@ -61,5 +61,18 @@
       org.wezfurlong.wezterm.desktop
     '';
     force = true;
+  };
+
+  # Atajo de teclado para KDE Plasma (Ctrl+Alt+T abre WezTerm)
+  xdg.desktopEntries."org.wezfurlong.wezterm" = {
+    name = "WezTerm";
+    comment = "Wez's Terminal Emulator";
+    icon = "org.wezfurlong.wezterm";
+    exec = "wezterm start --cwd .";
+    categories = [ "System" "TerminalEmulator" "Utility" ];
+    terminal = false;
+    settings = {
+      "X-KDE-Shortcuts" = "Ctrl+Alt+T";
+    };
   };
 }

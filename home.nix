@@ -74,6 +74,7 @@
     # EDITOR = "emacs";
   };
 
+
   # Fix cursor size for Nix-installed apps on non-NixOS Linux
   home.pointerCursor = {
     enable = true;
@@ -83,6 +84,7 @@
     name = "Adwaita";
     size = 24;
   };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

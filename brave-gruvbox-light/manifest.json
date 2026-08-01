@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "version": "1.5",
+    "name": "Brave Gruvbox Precision",
+    "theme": {
+        "colors": {
+            "frame": [
+                235,
+                219,
+                178
+            ],
+            "toolbar": [
+                251,
+                241,
+                199
+            ],
+            "tab_text": [
+                60,
+                56,
+                54
+            ],
+            "tab_background_text": [
+                140,
+                125,
+                115
+            ],
+            "bookmark_text": [
+                60,
+                56,
+                54
+            ],
+            "ntp_background": [
+                251,
+                241,
+                199
+            ],
+            "ntp_text": [
+                60,
+                56,
+                54
+            ]
+        }
+    }
+}
