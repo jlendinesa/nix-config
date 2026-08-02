@@ -39,6 +39,7 @@
         initial_cols = 121,
         initial_rows = 33,
         line_height = 1.0, -- set to 1.0 for better vertical spacing (0.8 is tight)
+        enable_scroll_bar = true,
       }
     '';
   };

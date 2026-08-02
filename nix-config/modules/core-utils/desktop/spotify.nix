@@ -11,7 +11,7 @@ in
   ];
 
   programs.spicetify = {
-    enable = false;
+    enable = true;
     
     # Custom apps to enable (Marketplace)
     enabledCustomApps = with spicePkgs.apps; [
@@ -28,7 +28,7 @@ in
     colorScheme = "mocha";
   };
   home.packages = with pkgs; [
-    spotify
+    # spotify
   ];
 
 }
