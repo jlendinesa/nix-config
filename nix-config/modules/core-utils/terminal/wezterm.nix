@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+  colors = import ../theming/colors.nix;
+  theme = colors.gruvbox-light.hex;
+in
 {
   home.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -28,7 +32,37 @@
         font_size = 11.5,
 
         -- Colors and appearance
-        color_scheme = "stylix",
+        colors = {
+          foreground = "${theme.fg}",
+          background = "${theme.bg}",
+          cursor_bg = "${theme.cursor}",
+          cursor_fg = "${theme.cursor_text}",
+          cursor_border = "${theme.cursor}",
+          selection_fg = "${theme.bg}",
+          selection_bg = "${theme.blue}",
+          scrollbar_thumb = "${theme.fg_dim}",
+          split = "${theme.bg_dim}",
+          ansi = {
+            "${theme.bg}",
+            "${theme.red}",
+            "${theme.green}",
+            "${theme.yellow}",
+            "${theme.blue}",
+            "${theme.purple}",
+            "${theme.aqua}",
+            "${theme.fg_dim}"
+          },
+          brights = {
+            "${theme.fg_dim}",
+            "${theme.red}",
+            "${theme.green}",
+            "${theme.yellow}",
+            "${theme.blue}",
+            "${theme.purple}",
+            "${theme.aqua}",
+            "${theme.fg}"
+          },
+        },
         enable_wayland = false, -- Zorin is X11 by default
 
         -- Transparency
@@ -36,7 +70,7 @@
         text_background_opacity = 1.0,
 
         -- Window size and spacing
-        initial_cols = 121,
+        initial_cols = 150,
         initial_rows = 33,
         line_height = 1.0, -- set to 1.0 for better vertical spacing (0.8 is tight)
         enable_scroll_bar = true,

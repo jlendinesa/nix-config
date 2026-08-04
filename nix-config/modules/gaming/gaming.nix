@@ -18,5 +18,6 @@
     shadps4
     sgdboop
     itch
+    prismlauncher
   ];
 }

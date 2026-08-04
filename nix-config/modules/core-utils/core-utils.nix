@@ -6,7 +6,7 @@
     ./terminal/terminal.nix
     ./flatpak/flatpak.nix
     ./appimages/appimages.nix
-    ./theming/stylix.nix
+    ./theming/theming.nix
   ];
 
   # Plantilla para paquetes de programas del módulo core-utils
