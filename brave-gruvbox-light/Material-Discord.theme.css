@@ -1,0 +1,185 @@
+/**
+ * @name Material Discord
+ * @version 3.0.7
+ * @description A theme based on Google's Material Design
+ * @author CapnKitten
+ *
+ * @website http://github.com/CapnKitten
+ * @source https://github.com/CapnKitten/BetterDiscord/blob/master/Themes/Material-Discord/css/source.css
+ * @donate https://paypal.me/capnkitten
+ * @invite jzJkA6Z
+ */
+
+@import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css");
+
+/* Material You addon */
+@import url("https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/addons/material-you/source.css");
+
+/* MATERIAL YOU DARK THEME SETTINGS */
+.theme-dark {
+    --saturation-modifier: 0.31;
+    --lightness-modifier: 0.225;
+    --text-lightness-modifier: 1.0;
+}
+
+/* MATERIAL YOU LIGHT THEME SETTINGS */
+.theme-light {
+    --saturation-modifier: 1.14;
+    --lightness-modifier: 1.08;
+    --text-lightness-modifier: 1.0;
+
+    /* Gruvbox Light Palette Mapping */
+    --app-bg: hsl(48, 87%, 88%);
+    /* bg0 - Main background */
+    --main-color: hsl(48, 87%, 88%);
+    /* bg0 */
+    --main-alt: hsl(43, 59%, 81%);
+    /* bg1 */
+    --sidebar-panel-color: hsl(48, 87%, 88%);
+    /* bg0 - Seamless sidebar */
+
+    /* Chat & UI Elements */
+    --message-color: hsl(53, 74%, 91%);
+    /* bg0_h - Lighter cream for chat bubbles */
+    --message-color-alt: hsl(43, 59%, 81%);
+    /* bg1 */
+    --message-color-hover: hsl(43, 59%, 81%);
+    /* bg1 */
+
+    --main-textarea-color: hsl(53, 74%, 91%);
+    /* bg0_h - Chat input bar */
+    --main-textarea-inner-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+    --channeltextarea-background: hsl(53, 74%, 91%);
+    --status-picker-color: hsl(53, 74%, 91%);
+    /* Profile status bar */
+
+    --input-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+
+    /* General Cards */
+    --card-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+    --card-color-filled: hsl(53, 74%, 91%);
+    /* bg0_h */
+    --card-color-alt: hsl(43, 59%, 81%);
+    /* bg1 */
+    --card-color-hover: hsl(43, 59%, 81%);
+    /* bg1 */
+    --card-color-active: hsl(43, 59%, 81%);
+    /* bg1 */
+    --card-color-alt-hover: hsl(43, 59%, 81%);
+    /* bg1 */
+    --card-border-color: hsl(43, 59%, 81%);
+    /* bg1 */
+
+    /* Activity / Member Cards */
+    --activity-card-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+    --activity-card-color--hover: hsl(43, 59%, 81%);
+    /* bg1 */
+    --activity-card-color--active: hsl(43, 59%, 81%);
+    /* bg1 */
+    --activity-card-color--inset: hsl(43, 59%, 81%);
+    /* bg1 */
+
+    /* Profiles */
+    --profile-body-background-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+
+    --popout-color: hsl(53, 74%, 91%);
+    /* bg0_h */
+
+    /* Strong Brand Colors (Discord Icon, Links, Active Tabs) */
+    --text-link: hsl(190, 89%, 35%);
+    --text-link-low-saturation: hsl(190, 89%, 35%);
+    --accent-hsl--material-you: 190, 89%, 35%;
+    /* Gruvbox Blue */
+    --button-link-color: 190, 89%, 35%;
+    /* Gruvbox Blue */
+    --button-link-text-color: hsl(190, 89%, 35%);
+    --accent-secondary-color: hsl(190, 89%, 45%);
+    --accent-text-color--material-you: hsl(48, 87%, 88%);
+    /* bg0 */
+
+    /* Text Colors */
+    --header-primary: hsl(20, 5%, 22%);
+    /* Dark text */
+    --header-secondary: hsl(20, 5%, 35%);
+    --text-primary: hsl(20, 5%, 22%);
+    --text-normal: hsl(20, 5%, 22%);
+    --text-subtle: hsl(20, 5%, 35%);
+    --text-tertiary: hsl(20, 5%, 45%);
+    --icon-tertiary: hsl(20, 5%, 45%);
+}
+
+:root {
+    /* APP FONT SETTINGS */
+    --app-font: "Google Sans Flex";
+    --app-font-width: 100;
+    --app-font-roundness: 100;
+
+    /* ACCENT HSL AND TEXT COLOR SETTINGS */
+    --accent-hue: 190;
+    --accent-saturation: 89%;
+    --accent-lightness: 35%;
+    --accent-text-color: hsl(48, 87%, 88%);
+    /* bg0 for text on top of accent buttons */
+    --accent-button-action: hsl(48, 87%, 88%);
+
+    /* ALERT HSL AND TEXT COLOR SETTINGS */
+    --alert-hue: 2;
+    --alert-saturation: 75%;
+    --alert-lightness: 46%;
+    --alert-text-color: hsl(48, 87%, 88%);
+    /* DOES NOTHING WITH MATERIAL YOU ENABLED */
+
+    /* WARNING HSL AND TEXT COLOR SETTINGS */
+    --warning-hue: 40;
+    --warning-saturation: 73%;
+    --warning-lightness: 49%;
+    --warning-text-color: hsl(20, 5%, 22%);
+    /* DOES NOTHING WITH MATERIAL YOU ENABLED */
+
+    /* MESSAGE SETTINGS */
+    --message-radius: 18px;
+    --message-padding-top: 8px;
+    --message-padding-side: 12px;
+
+    /* MESSAGE MEDIA SETTINGS */
+    --media-radius: 10px;
+
+    /* CARD SETTINGS */
+    --card-radius: 8px;
+    --card-radius-big: 18px;
+
+    /* BUTTON SETTINGS */
+    --button-height: 40px;
+    --button-padding: 16px;
+    --button-action-color: hsl(20, 5%, 22%);
+
+    /* INPUT SETTINGS */
+    --input-height: 40px;
+    --input-padding: 12px;
+
+    /* POPOUT AND MODAL SETTINGS */
+    --popout-radius: 8px;
+    --popout-radius-big: 18px;
+
+    /* TOOLTIP SETTINGS */
+    --tooltip-color: hsla(43, 59%, 81%, 0.9);
+    --tooltip-text-color: hsl(20, 5%, 22%);
+    --tooltip-font-size: 12px;
+    --tooltip-padding: 8px;
+    --tooltip-radius: 8px;
+
+    /* SCROLLBAR SETTINGS */
+    --scrollbar-width: 10px;
+    --scrollbar-thin-width: 6px;
+}
+
+/* FORCE CHAT LINK COLORS (ONLY IN MESSAGES) */
+.theme-light [class*="markup_"] a,
+.theme-light [class*="markup-"] a {
+    color: hsl(190, 89%, 35%) !important;
+}

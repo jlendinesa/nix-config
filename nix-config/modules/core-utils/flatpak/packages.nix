@@ -7,4 +7,5 @@
   "com.usebottles.bottles"
   "org.vinegarhq.Sober"
   "org.raspberrypi.rpi-imager"
+  "org.freedesktop.Platform.codecs-extra"
 ]
